@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Learn about the Animal Kingdom basics, discover daily animals, and understand our educational goals."/>
+    <title>Home - Animal Kingdom</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css"> 
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="index.html">🐾 Animal Kingdom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fs-5 active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="lessons.html">Lessons</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="donation.html">Donation</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="quiz.html">Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="glossary.html">Glossary</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section">
+            <div class="container h-100 d-flex flex-column justify-content-center text-center text-white">
+                <h1 class="display-1 fw-bold" style="color: #fff;">Welcome to the Wild!</h1>
+                <p class="lead fs-3" style="color: #fff;">Discover the amazing world of mammals, birds, reptiles, and amphibians.</p>
+                <a href="lessons.html" class="btn btn-primary btn-lg mt-4 d-inline-block">Start Learning</a>
+            </div>
+        </section>
+
+        <div class="container"><hr class="section-divider"></div>
+
+        <section class="container py-5 uniform-section" id="about">
+            <h2 class="fw-bold text-center mb-4">About Us</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div style="background-color: #6c757d; height: 350px;" class="rounded shadow d-flex align-items-center justify-content-center text-white fw-bold fs-4">
+                        [Placeholder: About Our Mission]
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">We are dedicated to bringing the wilderness to your screen.</p>
+                    <p>The Animal Kingdom project was founded to help students and nature enthusiasts understand the complex lives of the creatures we share our planet with. Our mission is to educate and inspire conservation.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container"><hr class="section-divider"></div>
+
+        <section class="bg-light py-4 uniform-section"> 
+            <div class="container">
+                <h2 class="text-center mb-4">Animals of the Day - Spotlight</h2>
+                
+                <div class="row align-items-center flex-md-row-reverse"> 
+                    
+                    <div class="col-md-6 mb-4 mb-md-0"> 
+                        <div id="animalSpotlightCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="2"></button>
+                                <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="3"></button>
+                                <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="4"></button>
+                            </div>
+                            <div class="carousel-inner carousel-inner-overlay">
+                                <div class="carousel-item active carousel-item-overlay" style="background-image: url('img/giraffe.jpg');">
+                                    <div class="carousel-caption-custom">
+                                        <h3 class="fw-bold">African Giraffe 🦒</h3>
+                                        <p class="mb-0">The tallest mammal, native to Kenya and other parts of Africa.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carousel-item-overlay" style="background-image: url('img/Macow.jpg');">
+                                    <div class="carousel-caption-custom">
+                                        <h3 class="fw-bold">Blue & Gold Macaw 🦜</h3>
+                                        <p class="mb-0">From South America. These parrots can live for over 50 years.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carousel-item-overlay" style="background-image: url('img/TreeFrog.jpg');">
+                                    <div class="carousel-caption-custom">
+                                        <h3 class="fw-bold">Red-Eyed Tree Frog 🐸</h3>
+                                        <p class="mb-0">Found in Central America. Its vibrant eyes are used to startle predators.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carousel-item-overlay" style="background-image: url('img/Elephant.jpg');">
+                                    <div class="carousel-caption-custom">
+                                        <h3 class="fw-bold">African Elephant 🐘</h3>
+                                        <p class="mb-0">The largest land animal on Earth, native to Africa.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carousel-item-overlay" style="background-image: url('img/WhaleShark.jpg');">
+                                    <div class="carousel-caption-custom">
+                                        <h3 class="fw-bold">Whale Shark 🦈</h3>
+                                        <p class="mb-0">The largest fish species, a filter feeder found in tropical oceans worldwide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div> 
+                    
+                    <div class="col-md-6">
+                        <h3 class="fw-bold text-success">Why the Daily Spotlight?</h3>
+                        <p class="lead">**Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.**</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="lessons.html" class="btn btn-outline-success mt-2">View All Lessons</a>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <div class="container"><hr class="section-divider"></div>
+
+        <section class="container py-5 uniform-section">
+            <h2 class="fw-bold text-center mb-4">Our Goals: Educate</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="lead">Our primary goal is to educate the public about animal types, classification, and conservation status.</p>
+                    <p>We aim to provide accessible, accurate information to students, teachers, and curious minds globally.</p>
+                </div>
+                <div class="col-md-6">
+                    <div style="background-color: #ffc107; height: 350px;" class="rounded shadow d-flex align-items-center justify-content-center text-dark fw-bold fs-4">
+                        [Placeholder: Education Focus]
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer style="background-color: #198754;" class="text-white pt-4 mt-5">
+        <div class="container text-center py-4">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Stay Updated</h5>
+                    <p class="small">Sign up for our newsletter to get the Animal of the Day sent straight to your inbox!</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control form-control-sm" placeholder="Your Email">
+                        <button class="btn btn-primary btn-sm" type="button">Subscribe</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-3">
+                    <h5>Connect With Us</h5>
+                    <div class="my-3">
+                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                    <p class="mb-0 small">Email: info@animalkingdom.org</p>
+                    <p class="mb-0 small">Location: The World Wide Web</p>
+                </div>
+                
+                <div class="col-md-4 mb-3">
+                    <h5>Legal & Project Info</h5>
+                    <p class="small mb-1">Responsive CDN Project</p>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms of Use</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-2">
+            
+            <p class="small mb-0">&copy; 2024 Animal Kingdom Basics | Student Project</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
