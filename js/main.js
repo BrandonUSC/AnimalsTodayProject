@@ -1,49 +1,60 @@
-/**
- * main.js
- * Project: Animal Kingdom - Handles client-side form validation (Required Interactive Feature)
- * Version: 1.1
- */
+
+//main.js  Handles the client-side form validation and Formspree Forms.
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Target the form element by ID
+    const contactContainer = document.getElementById('contactContainer');
+    const successMessage = document.getElementById('successMessage');
     const contactForm = document.getElementById('contactForm');
     
-    // Ensure we are on the contact page before attaching listener
-    if (contactForm) {
+    //Ensure we are on the contact page and elements exist before attaching listener
+    if (contactForm && contactContainer && successMessage) {
+        
         contactForm.addEventListener('submit', function (event) {
             
             // 1. Client-Side Validation Check
             if (!contactForm.checkValidity()) {
-                event.preventDefault(); // Stop form submission if invalid
+                // If form is invalid, prevent submission and stop adding to it
+                event.preventDefault(); 
                 event.stopPropagation();
             } else {
-                // 2. Form is valid: Prevent actual submission (simulates success for static site)
-                event.preventDefault();
+                // 2. Form is valid, prevent default browser submission
+                event.preventDefault(); 
                 
-                // Show success message
-                const successMsg = document.getElementById('formSuccess');
-                if (successMsg) {
-                    successMsg.classList.remove('d-none');
-                }
-                
-                // Reset form state
-                contactForm.reset();
-                contactForm.classList.remove('was-validated');
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    if (successMsg) {
-                         successMsg.classList.add('d-none');
+                // 3. Perform AJAX submission to Formspree
+                fetch(contactForm.action, {
+                    method: contactForm.method,
+                    body: new FormData(contactForm),
+                    headers: {
+                        'Accept': 'application/json' 
                     }
-                }, 5000);
-                
-                // Exit handler after successful simulation
-                return;
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Submission successful response
+                        
+                        // Hide the form container, SHOW the success message container
+                        contactContainer.classList.add('d-none'); 
+                        successMessage.classList.remove('d-none');
+                        
+                        contactForm.reset();
+                        contactForm.classList.remove('was-validated'); 
+                        
+                    } else {
+                        // Handle non-200 responses
+                        alert('Oops! There was an issue submitting your form. Please check your connection and try again.');
+                    }
+                })
+                .catch(error => {
+                    // Handle network or fetch errors
+                    console.error('Submission Error:', error);
+                    alert('Oops! An unexpected network error occurred.');
+                });
             }
 
-            // 3. Applies Bootstrap's visual validation styles
+            // 4. Applies Bootstrap's visual validation styles
             contactForm.classList.add('was-validated');
+            
         }, false);
     }
 });

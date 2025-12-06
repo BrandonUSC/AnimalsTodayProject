@@ -1,24 +1,41 @@
+<!-- lessons.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+      AnimalsToday - Lessons page
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons - Animal Kingdom</title>
+    <title>Lessons - AnimalsToday</title>
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google font and project styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+   <!-- NAVBAR -->
+   <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fs-4" href="index.html">🐾 Animal Kingdom</a>
+            <!-- Brand name -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/Logo.png" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;">
+                <span class="fw-bold fs-3 text-primary">AnimalsToday</span>
+            </a>
+
+            <!-- Mobile toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Links -->
             <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link fs-5" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link fs-5 active" href="lessons.html">Lessons</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="donation.html">Donation</a></li>
@@ -30,152 +47,169 @@
         </div>
     </nav>
 
+    <!-- PAGE HEADER -->
     <header class="page-header">
         <div class="container">
-            <h1 class="display-4 fw-bold">The 5 Main Vertebrate Classes</h1>
-            <p class="lead">Explore the major classifications of animals within Phylum Chordata (vertebrates).</p>
+            <h1 class="display-4 fw-bold text-primary">Lessons</h1>
+            <p class="lead text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
         </div>
     </header>
 
+    <!-- MAIN: LESSONS LIST: list the lessons promated by the site
+    -->
     <main>
         <section class="content-block py-5">
             <div class="container">
                 <h2 class="fw-bold text-center mb-5">Core Classification Lessons</h2>
 
+                <!-- LESSON 1: MAMMALS -->
                 <div class="row lesson-row align-items-center">
                     <div class="col-md-6 lesson-img-col">
+                        <!-- Image representing the lesson -->
                         <img src="img/mammals.jpg" alt="Lion representing mammals" class="lesson-img">
                     </div>
                     <div class="col-md-6 lesson-text-col">
-                        <h2 class="fw-bold">1. Mammalia 🦁</h2>
-                        <p class="lead">Warm-blooded, hairy, live-bearing animals.</p>
-                        <p>Characterized by **mammary glands** to nurse their young, the presence of **hair or fur**, and being **warm-blooded**. This group is incredibly diverse, including humans, whales, and bats.</p>
+                        <h2 class="fw-bold">1. Mammals</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        <!-- Button opens modal with full lesson -->
                         <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#mammalModal">Read Full Lesson</button>
                     </div>
                 </div>
                 
                 <div class="container"><hr class="section-divider"></div>
 
+                <!-- LESSON 2: BIRDS -->
                 <div class="row lesson-row align-items-center flex-md-row-reverse">
                     <div class="col-md-6 lesson-img-col">
                         <img src="img/birds.jpg" alt="Birds representing birds" class="lesson-img">
                     </div>
                     <div class="col-md-6 lesson-text-col">
-                        <h2 class="fw-bold">2. Aves (Birds) 🦜</h2>
-                        <p class="lead">Feathered, winged, egg-laying vertebrates.</p>
-                        <p>The defining feature is **feathers**. Birds are **warm-blooded**, lay hard-shelled eggs, and have a lightweight skeleton adapted for flight.</p>
+                        <h2 class="fw-bold">2. Birds</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
                         <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#birdModal">Read Full Lesson</button>
                     </div>
                 </div>
 
                 <div class="container"><hr class="section-divider"></div>
 
+                <!-- LESSON 3: REPTILES -->
                 <div class="row lesson-row align-items-center">
                     <div class="col-md-6 lesson-img-col">
                         <img src="img/reptiles.jpg" alt="Snake representing reptiles" class="lesson-img">
                     </div>
                     <div class="col-md-6 lesson-text-col">
-                        <h2 class="fw-bold">3. Reptilia (Reptiles) 🐍</h2>
-                        <p class="lead">Cold-blooded animals with scales or dry skin.</p>
-                        <p>Reptiles are **cold-blooded** (ectothermic) and typically lay eggs on land. They are characterized by **dry, scaly skin** that helps prevent water loss.</p>
+                        <h2 class="fw-bold">3. Reptiles</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
                         <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#reptileModal">Read Full Lesson</button>
                     </div>
                 </div>
 
                 <div class="container"><hr class="section-divider"></div>
 
+                <!-- LESSON 4: AMPHIBIANS -->
                 <div class="row lesson-row align-items-center flex-md-row-reverse">
                     <div class="col-md-6 lesson-img-col">
                         <img src="img/amphibians.jpg" alt="Frog representing amphibians" class="lesson-img">
                     </div>
                     <div class="col-md-6 lesson-text-col">
-                        <h2 class="fw-bold">4. Amphibia (Amphibians) 🐸</h2>
-                        <p class="lead">Dual-life animals living in water and on land.</p>
-                        <p>They are **ectothermic** (cold-blooded) and generally undergo **metamorphosis**, starting as water-dwelling larvae (tadpoles) and transitioning to air-breathing adults.</p>
+                        <h2 class="fw-bold">4. Amphibians </h2>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
                         <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#amphibiaModal">Read Full Lesson</button>
                     </div>
                 </div>
 
                 <div class="container"><hr class="section-divider"></div>
 
+                <!-- LESSON 5: FISH -->
                 <div class="row lesson-row align-items-center">
                     <div class="col-md-6 lesson-img-col">
                         <img src="img/fishes.jpg" alt="Clown fish representing bony fish" class="lesson-img">
                     </div>
                     <div class="col-md-6 lesson-text-col">
-                        <h2 class="fw-bold">5. Osteichthyes (Bony Fish) 🐠</h2>
-                        <p class="lead">The most diverse group of fish with skeletons made of bone.</p>
-                        <p>The vast majority of fish species belong to this group. They are defined by a skeleton primarily composed of **bone** and possess a **swim bladder** for buoyancy.</p>
+                        <h2 class="fw-bold">5. Fish</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
                         <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#bonyFishModal">Read Full Lesson</button>
                     </div>
                 </div>
 
                 <div class="container"><hr class="section-divider"></div>
 
+                <!-- THEMATIC LESSONS -->
                 <h2 class="fw-bold text-center mb-5">Thematic Lessons</h2> 
                 <div class="row lesson-row align-items-center flex-md-row-reverse">
                     <div class="col-md-6 lesson-img-col">
                         <img src="img/Conservation.jpg" alt="Panda representing conservation" class="lesson-img">
                     </div>
                     <div class="col-md-6 lesson-text-col">
-                        <h2 class="fw-bold">6. Conservation Challenges 🐼</h2>
-                        <p class="lead">Understanding the threats to global biodiversity.</p>
-                        <p>Learn about habitat loss, climate change, and poaching, and what can be done to protect endangered species.</p>
+                        <h2 class="fw-bold">6. Conservation Challenges</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        <!-- This button uses a green style to distinguish from core lessons -->
                         <button class="btn btn-success mt-2" data-bs-toggle="modal" data-bs-target="#conservationModal">View Challenges</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <div class="modal fade" id="mammalModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Mammalia</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Mammals are warm-blooded vertebrates...</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
-    <div class="modal fade" id="birdModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Aves</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Birds are warm-blooded, egg-laying...</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
-    <div class="modal fade" id="reptileModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Reptilia</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Vertebrates with dry skin and scales...</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
-    <div class="modal fade" id="amphibiaModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Amphibia</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Four-limbed, ectothermic vertebrates...</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
-    <div class="modal fade" id="bonyFishModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Osteichthyes</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Saltwater and freshwater fish with bony skeletons...</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
-    <div class="modal fade" id="conservationModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Conservation Challenges</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><h6>Habitat Loss:</h6><p>Impact of deforestation...</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
 
-   <footer style="background-color: #198754;" class="text-white pt-4 mt-5">
+    <!-- MODALS
+         - Each modal contains "full lesson" content.
+    -->
+    <div class="modal fade" id="mammalModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Mammalia</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+    <div class="modal fade" id="birdModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Aves</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+    <div class="modal fade" id="reptileModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Reptilia</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+    <div class="modal fade" id="amphibiaModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Amphibia</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+    <div class="modal fade" id="bonyFishModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Full Lesson: Osteichthyes</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+    <div class="modal fade" id="conservationModal" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Conservation Challenges</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><h6>Lorem Ipsum:</h6><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+    <!-- SITE FOOTER -->
+     <footer class="pt-4 mt-5">
         <div class="container text-center py-4">
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <h5>Stay Updated</h5>
-                    <p class="small">Sign up for our newsletter to get the Animal of the Day sent straight to your inbox!</p>
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control form-control-sm" placeholder="Your Email">
-                        <button class="btn btn-primary btn-sm" type="button">Subscribe</button>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-3">
-                    <h5>Connect With Us</h5>
+                    <h5>Get In Touch & Connect</h5>
+                    <p class="small mb-2">Have a question? Contact the team today!</p>
+                    <a href="contact.html" class="btn btn-success btn-lg mb-3">Contact Us</a>
                     <div class="my-3">
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
                     </div>
-                    
-                    <p class="mb-0 small">Email: info@animalkingdom.org</p>
-                    <p class="mb-0 small">Location: The World Wide Web</p>
+                    <p class="mb-0 small">Email: info@animalstoday.org</p>
                 </div>
-                
                 <div class="col-md-4 mb-3">
-                    <h5>Legal & Project Info</h5>
-                    <p class="small mb-1">Responsive CDN Project</p>
+                    <h5>Quick Links</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Terms of Use</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Site Map</a></li>
+                        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="lessons.html" class="text-white text-decoration-none">Lessons</a></li>
+                        <li><a href="donation.html" class="text-white text-decoration-none">Donate</a></li>
+                        <li><a href="quiz.html" class="text-white text-decoration-none">Quiz</a></li>
+                        <li><a href="glossary.html" class="text-white text-decoration-none">Glossary</a></li>
                     </ul>
                 </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Legal & Project Info</h5>
+                    <p class="small mb-1">Bootstrap Project</p>
+                    <p class="small mb-1">Privacy Policy</p>
+                    <p class="small mb-1">Terms of Use</p>
+                </div>
             </div>
-            
             <hr class="mt-4 mb-2">
-            
-            <p class="small mb-0">&copy; 2024 Animal Kingdom Basics | Student Project</p>
+            <p class="small mb-0">&copy; 2025 AnimalsToday | Project</p>
         </div>
     </footer>
     
+    <!-- JS: Bootstrap + main script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>

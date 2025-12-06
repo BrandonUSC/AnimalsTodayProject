@@ -1,24 +1,39 @@
+<!-- quiz.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--AnimalsToday - Quiz page-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - Animal Kingdom</title>
+    <title>Quiz - AnimalsToday</title>
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google font and project styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+   <!-- NAVBAR links to other sites-->
+   <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fs-4" href="index.html">🐾 Animal Kingdom</a>
+            <!-- Brand: logo + site name -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/Logo.png" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;">
+                <span class="fw-bold fs-3 text-primary">AnimalsToday</span>
+            </a>
+
+            <!-- Mobile toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Collapsible nav links -->
             <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link fs-5" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="lessons.html">Lessons</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="donation.html">Donation</a></li>
@@ -30,22 +45,25 @@
         </div>
     </nav>
 
+    <!-- PAGE HEADER -->
     <header class="page-header">
         <div class="container">
-            <h1 class="display-4 fw-bold">Test Your Knowledge</h1>
-            <p class="lead">How much do you know about the wild?</p>
+            <h1 class="display-4 fw-bold text-primary">Quiz</h1>
+            <p class="lead text-primary">How much do you know about the wild?</p>
         </div>
     </header>
 
-    <div class="container"><hr class="section-divider"></div>
-
+    <!-- MAIN: QUIZ CARD
+         - Contains a form (#dailyQuizForm) that can be handled by js/quiz.js
+    -->
     <main>
         <div class="container py-5 text-center">
             <section class="card p-5 mx-auto shadow-sm content-block" style="max-width: 800px;">
-                <h2 class="text-center mb-4 text-primary">Today's Animal Classification Quiz (6 Questions)</h2>
+                <h2 class="text-center mb-4">Today's Animal Classification Quiz (6 Questions)</h2>
                 
                 <form id="dailyQuizForm">
 
+                    <!-- QUESTION 1 -->
                     <div class="mb-4 pb-3 border-bottom text-start">
                         <h4 class="mb-3">Question 1: Which type of animal has hair or fur?</h4>
                         <div class="form-check">
@@ -62,6 +80,7 @@
                         </div>
                     </div>
 
+                    <!-- QUESTION 2 -->
                     <div class="mb-4 pb-3 border-bottom text-start">
                         <h4 class="mb-3">Question 2: Which animal group primarily breathes using gills?</h4>
                         <div class="form-check">
@@ -78,6 +97,7 @@
                         </div>
                     </div>
 
+                    <!-- QUESTION 3 -->
                     <div class="mb-4 pb-3 border-bottom text-start">
                         <h4 class="mb-3">Question 3: Which vertebrates are characterized by having feathers?</h4>
                         <div class="form-check">
@@ -94,6 +114,7 @@
                         </div>
                     </div>
                     
+                    <!-- QUESTION 4 -->
                     <div class="mb-4 pb-3 border-bottom text-start">
                         <h4 class="mb-3">Question 4: Which group of cold-blooded animals typically has dry, scaly skin and lays eggs on land?</h4>
                         <div class="form-check">
@@ -110,6 +131,7 @@
                         </div>
                     </div>
 
+                    <!-- QUESTION 5 -->
                     <div class="mb-4 pb-3 border-bottom text-start">
                         <h4 class="mb-3">Question 5: Which class of vertebrates is known to undergo metamorphosis?</h4>
                         <div class="form-check">
@@ -126,6 +148,7 @@
                         </div>
                     </div>
 
+                    <!-- QUESTION 6 -->
                     <div class="mb-4 pb-3 text-start">
                         <h4 class="mb-3">Question 6: What unique gland is present in female Mammals for feeding their young?</h4>
                         <div class="form-check">
@@ -142,59 +165,61 @@
                         </div>
                     </div>
 
+                    <!-- Submit button -->
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-success btn-lg px-5">Submit Quiz</button>
                     </div>
                     
                 </form>
 
+                <!-- Result area (populated by JS)
+                     - Hidden by default (d-none). Use role="alert" for assistive tech announcements.
+                     - quiz.js should remove d-none and fill innerHTML to show results.
+                -->
                 <div id="quizResult" class="mt-4 p-3 border rounded d-none" role="alert"></div>
 
             </section>
         </div>
     </main>
 
-    <footer style="background-color: #198754;" class="text-white pt-4 mt-5">
+    <!-- SITE FOOTER -->
+     <footer class="pt-4 mt-5">
         <div class="container text-center py-4">
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <h5>Stay Updated</h5>
-                    <p class="small">Sign up for our newsletter to get the Animal of the Day sent straight to your inbox!</p>
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control form-control-sm" placeholder="Your Email">
-                        <button class="btn btn-primary btn-sm" type="button">Subscribe</button>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-3">
-                    <h5>Connect With Us</h5>
+                    <h5>Get In Touch & Connect</h5>
+                    <p class="small mb-2">Have a question? Contact the team today!</p>
+                    <a href="contact.html" class="btn btn-success btn-lg mb-3">Contact Us</a>
                     <div class="my-3">
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
                     </div>
-                    
-                    <p class="mb-0 small">Email: info@animalkingdom.org</p>
-                    <p class="mb-0 small">Location: The World Wide Web</p>
+                    <p class="mb-0 small">Email: info@animalstoday.org</p>
                 </div>
-                
                 <div class="col-md-4 mb-3">
-                    <h5>Legal & Project Info</h5>
-                    <p class="small mb-1">Responsive CDN Project</p>
+                    <h5>Quick Links</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Terms of Use</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Site Map</a></li>
+                        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="lessons.html" class="text-white text-decoration-none">Lessons</a></li>
+                        <li><a href="donation.html" class="text-white text-decoration-none">Donate</a></li>
+                        <li><a href="quiz.html" class="text-white text-decoration-none">Quiz</a></li>
+                        <li><a href="glossary.html" class="text-white text-decoration-none">Glossary</a></li>
                     </ul>
                 </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Legal & Project Info</h5>
+                    <p class="small mb-1">Bootstrap Project</p>
+                    <p class="small mb-1">Privacy Policy</p>
+                    <p class="small mb-1">Terms of Use</p>
+                </div>
             </div>
-            
             <hr class="mt-4 mb-2">
-            
-            <p class="small mb-0">&copy; 2024 Animal Kingdom Basics | Student Project</p>
+            <p class="small mb-0">&copy; 2025 AnimalsToday | Project</p>
         </div>
     </footer>
 
+    <!-- JS: Bootstrap + site scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/quiz.js"></script>

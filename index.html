@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--
+      AnimalsToday - Home page with hero, "About", daily spotlight carousel, goals, and footer.
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Learn about the Animal Kingdom basics, discover daily animals, and understand our educational goals."/>
-    <title>Home - Animal Kingdom</title>
+    <!-- Short description used by search engines -->
+    <meta name="description" content="Learn about the AnimalsToday basics, discover daily animals, and understand our educational goals."/>
+    <title>Home - AnimalsToday</title>
 
+    <!-- External CSS: Bootstrap and Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css"> 
 
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Project styles (override bootstrap + custom layout) -->
+    <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+    <!-- NAVBAR
+         - Uses Bootstrap .navbar-expand-lg for responsive collapse and links to index.html, nav items link to other site pages
+    -->
+    <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fs-4" href="index.html">🐾 Animal Kingdom</a>
+            <!-- Brand: logo image + text -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/Logo.png" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;">
+                <span class="fw-bold fs-3 text-primary">AnimalsToday</span>
+            </a>
+
+            <!-- Toggler visible on small screens -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Collapsible nav links -->
             <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link fs-5 active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="lessons.html">Lessons</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="donation.html">Donation</a></li>
@@ -34,41 +53,67 @@
     </nav>
 
     <main>
+        <!-- HERO SECTION
+             - Large welcome message and call to action button that directs to lessons.html
+        -->
         <section class="hero-section">
+
+            <!-- Fullscreen Background Video -->
+            <div class="video-background">
+                <iframe 
+                    src="https://www.youtube.com/embed/WjMR2eJ3q38?autoplay=1&mute=1&loop=1&playlist=WjMR2eJ3q38&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                    title="Wildlife Background Loop"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                </iframe>
+             </div>
+
+            <!-- Dark overlay -->
+            <div class="hero-overlay"></div>
+
             <div class="container h-100 d-flex flex-column justify-content-center text-center text-white">
                 <h1 class="display-1 fw-bold" style="color: #fff;">Welcome to the Wild!</h1>
-                <p class="lead fs-3" style="color: #fff;">Discover the amazing world of mammals, birds, reptiles, and amphibians.</p>
+                <p class="lead fs-3" style="color: #fff;">Discover the amazing world of mammals, birds, reptiles, and more...</p>
                 <a href="lessons.html" class="btn btn-primary btn-lg mt-4 d-inline-block">Start Learning</a>
             </div>
         </section>
 
-        <div class="container"><hr class="section-divider"></div>
-
+        <!-- ABOUT US
+             - Two-column layout: placeholder visual and description
+        -->
         <section class="container py-5 uniform-section" id="about">
             <h2 class="fw-bold text-center mb-4">About Us</h2>
             <div class="row align-items-center">
                 <div class="col-md-6">
+                    <!-- Visual placeholder for mission image or graphic -->
                     <div style="background-color: #6c757d; height: 350px;" class="rounded shadow d-flex align-items-center justify-content-center text-white fw-bold fs-4">
                         [Placeholder: About Our Mission]
                     </div>
                 </div>
                 <div class="col-md-6">
                     <p class="lead">We are dedicated to bringing the wilderness to your screen.</p>
-                    <p>The Animal Kingdom project was founded to help students and nature enthusiasts understand the complex lives of the creatures we share our planet with. Our mission is to educate and inspire conservation.</p>
+                    <p>The AnimalsToday project was founded to help students and nature enthusiasts understand the complex lives of the creatures we share our planet with. Our mission is to educate and inspire conservation.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Section divider -->
         <div class="container"><hr class="section-divider"></div>
 
+        <!-- ANIMALS OF THE DAY — SPOTLIGHT Carousel with 5 items. Each item has a small "Read More" button that opens a modal. -->
         <section class="bg-light py-4 uniform-section"> 
             <div class="container">
                 <h2 class="text-center mb-4">Animals of the Day - Spotlight</h2>
-                
+
+                <!-- Layout: carousel on left explanatory text on right -->
                 <div class="row align-items-center flex-md-row-reverse"> 
                     
                     <div class="col-md-6 mb-4 mb-md-0"> 
+                        <!-- Bootstrap carousel -->
                         <div id="animalSpotlightCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+                            <!-- Carousel indicators -->
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="0" class="active"></button>
                                 <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="1"></button>
@@ -76,61 +121,130 @@
                                 <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="3"></button>
                                 <button type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide-to="4"></button>
                             </div>
+
+                            <!-- Carousel items
+                                 - Each carousel-item uses an inline background-image style.-->
                             <div class="carousel-inner carousel-inner-overlay">
+
+                                <!-- 1: Giraffe (active) -->
                                 <div class="carousel-item active carousel-item-overlay" style="background-image: url('img/giraffe.jpg');">
                                     <div class="carousel-caption-custom">
-                                        <h3 class="fw-bold">African Giraffe 🦒</h3>
-                                        <p class="mb-0">The tallest mammal, native to Kenya and other parts of Africa.</p>
+                                        <h3 class="fw-bold text-white">African Giraffe</h3>
+                                        <p>The tallest mammal on Earth.</p>
+                                        <!-- Button triggers modal with more info -->
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal1">Read More</button>
                                     </div>
                                 </div>
+
+                                <!-- 2: Macaw -->
                                 <div class="carousel-item carousel-item-overlay" style="background-image: url('img/Macow.jpg');">
                                     <div class="carousel-caption-custom">
-                                        <h3 class="fw-bold">Blue & Gold Macaw 🦜</h3>
-                                        <p class="mb-0">From South America. These parrots can live for over 50 years.</p>
+                                        <h3 class="fw-bold text-white">Blue & Gold Macaw</h3>
+                                        <p>Long-living parrot from South America.</p>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal2">Read More</button>
                                     </div>
                                 </div>
+
+                                <!-- 3: Tree Frog -->
                                 <div class="carousel-item carousel-item-overlay" style="background-image: url('img/TreeFrog.jpg');">
                                     <div class="carousel-caption-custom">
-                                        <h3 class="fw-bold">Red-Eyed Tree Frog 🐸</h3>
-                                        <p class="mb-0">Found in Central America. Its vibrant eyes are used to startle predators.</p>
+                                        <h3 class="fw-bold text-white">Red-Eyed Tree Frog</h3>
+                                        <p>Uses bright eyes to startle predators.</p>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal3">Read More</button>
                                     </div>
                                 </div>
+
+                                <!-- 4: Elephant -->
                                 <div class="carousel-item carousel-item-overlay" style="background-image: url('img/Elephant.jpg');">
                                     <div class="carousel-caption-custom">
-                                        <h3 class="fw-bold">African Elephant 🐘</h3>
-                                        <p class="mb-0">The largest land animal on Earth, native to Africa.</p>
+                                        <h3 class="fw-bold text-white">African Elephant</h3>
+                                        <p>Largest land animal.</p>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal4">Read More</button>
                                     </div>
                                 </div>
+
+                                <!-- 5: Whale Shark -->
                                 <div class="carousel-item carousel-item-overlay" style="background-image: url('img/WhaleShark.jpg');">
                                     <div class="carousel-caption-custom">
-                                        <h3 class="fw-bold">Whale Shark 🦈</h3>
-                                        <p class="mb-0">The largest fish species, a filter feeder found in tropical oceans worldwide.</p>
+                                        <h3 class="fw-bold text-white">Whale Shark</h3>
+                                        <p>Largest species of fish.</p>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#infoModal5">Read More</button>
                                     </div>
                                 </div>
+
                             </div>
+
+                            <!-- Carousel navigation (prev/next) -->
                             <button class="carousel-control-prev" type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#animalSpotlightCarousel" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
                             </button>
+
                         </div>
-                    </div> 
+                    </div>
                     
+                    <!-- Explanatory column for the spotlight -->
                     <div class="col-md-6">
                         <h3 class="fw-bold text-success">Why the Daily Spotlight?</h3>
-                        <p class="lead">**Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.**</p>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <a href="lessons.html" class="btn btn-outline-success mt-2">View All Lessons</a>
+                        <p class="lead">Discover fascinating animals every day and learn fun facts effortlessly.</p>
+                        <p>We highlight different animals to spark interest in wildlife and encourage curiosity about nature's diversity.</p>
+                        <a href="lessons.html" class="btn btn-success">View All Lessons</a>
                     </div>
-                </div> 
+
+                </div>
             </div>
+
+            <!-- MODALS
+                 - Each modal contains brief info of the animal.
+            -->
+            <!-- 1 -->
+            <div class="modal fade" id="infoModal1" tabindex="-1">
+                <div class="modal-dialog"><div class="modal-content p-3">
+                    <h5>African Giraffe</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae nunc sit amet orci luctus dictum.</p>
+                </div></div>
+            </div>
+
+            <!-- 2 -->
+            <div class="modal fade" id="infoModal2" tabindex="-1">
+                <div class="modal-dialog"><div class="modal-content p-3">
+                    <h5>Blue & Gold Macaw</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Duis eget orci vel lacus.</p>
+                </div></div>
+            </div>
+
+            <!-- 3 -->
+            <div class="modal fade" id="infoModal3" tabindex="-1">
+                <div class="modal-dialog"><div class="modal-content p-3">
+                    <h5>Red-Eyed Tree Frog</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus ex sed eros feugiat posuere.</p>
+                </div></div>
+            </div>
+
+            <!-- 4 -->
+            <div class="modal fade" id="infoModal4" tabindex="-1">
+                <div class="modal-dialog"><div class="modal-content p-3">
+                    <h5>African Elephant</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id libero at ipsum fermentum commodo.</p>
+                </div></div>
+            </div>
+
+            <!-- 5 -->
+            <div class="modal fade" id="infoModal5" tabindex="-1">
+                <div class="modal-dialog"><div class="modal-content p-3">
+                    <h5>Whale Shark</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sem sit amet sapien gravida viverra.</p>
+                </div></div>
+            </div>
+
         </section>
 
+        <!-- Another section divider -->
         <div class="container"><hr class="section-divider"></div>
 
+        <!-- OUR GOALS: EDUCATE. two columns: text and placeholder visual (swap order on smaller screens as needed) -->
         <section class="container py-5 uniform-section">
             <h2 class="fw-bold text-center mb-4">Our Goals: Educate</h2>
             <div class="row align-items-center">
@@ -139,6 +253,7 @@
                     <p>We aim to provide accessible, accurate information to students, teachers, and curious minds globally.</p>
                 </div>
                 <div class="col-md-6">
+                    <!-- Another placeholder region for educational graphic -->
                     <div style="background-color: #ffc107; height: 350px;" class="rounded shadow d-flex align-items-center justify-content-center text-dark fw-bold fs-4">
                         [Placeholder: Education Focus]
                     </div>
@@ -147,47 +262,45 @@
         </section>
     </main>
 
-<footer style="background-color: #198754;" class="text-white pt-4 mt-5">
+    <!-- FOOTER: contact call to action, quick links, and more-->
+    <footer class="pt-4 mt-5">
         <div class="container text-center py-4">
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <h5>Stay Updated</h5>
-                    <p class="small">Sign up for our newsletter to get the Animal of the Day sent straight to your inbox!</p>
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control form-control-sm" placeholder="Your Email">
-                        <button class="btn btn-primary btn-sm" type="button">Subscribe</button>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-3">
-                    <h5>Connect With Us</h5>
+                    <h5>Get In Touch & Connect</h5>
+                    <p class="small mb-2">Have a question? Contact the team today!</p>
+                    <a href="contact.html" class="btn btn-success btn-lg mb-3">Contact Us</a>
                     <div class="my-3">
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon-link text-white mx-2"><i class="fab fa-instagram"></i></a>
+                        <!-- Social icons -->
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
                     </div>
-                    
-                    <p class="mb-0 small">Email: info@animalkingdom.org</p>
-                    <p class="mb-0 small">Location: The World Wide Web</p>
+                    <p class="mb-0 small">Email: info@animalstoday.org</p>
                 </div>
-                
                 <div class="col-md-4 mb-3">
-                    <h5>Legal & Project Info</h5>
-                    <p class="small mb-1">Responsive CDN Project</p>
+                    <h5>Quick Links</h5>
                     <ul class="list-unstyled small">
-                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Terms of Use</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Site Map</a></li>
+                        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="lessons.html" class="text-white text-decoration-none">Lessons</a></li>
+                        <li><a href="donation.html" class="text-white text-decoration-none">Donate</a></li>
+                        <li><a href="quiz.html" class="text-white text-decoration-none">Quiz</a></li>
+                        <li><a href="glossary.html" class="text-white text-decoration-none">Glossary</a></li>
                     </ul>
                 </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Legal & Project Info</h5>
+                    <p class="small mb-1">Bootstrap Project</p>
+                    <p class="small mb-1">Privacy Policy</p>
+                    <p class="small mb-1">Terms of Use</p>
+                </div>
             </div>
-            
             <hr class="mt-4 mb-2">
-            
-            <p class="small mb-0">&copy; 2024 Animal Kingdom Basics | Student Project</p>
+            <p class="small mb-0">&copy; 2025 AnimalsToday | Project</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

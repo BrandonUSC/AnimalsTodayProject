@@ -1,64 +1,74 @@
 /* --- GLOBAL STYLES (Applies to all pages) --- */
 
-/* --- TYPOGRAPHY: 18px Base, Major Third (1.25) Scale (18px * 1.25^n) --- */
 html { font-size: 18px; }
 body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #212529; }
 
-/* All headings use the dark green accent color */
-h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--accent-green); margin-bottom: 1rem; }
-h1 { font-size: 3.815rem; } /* ~68px */
-h2 { font-size: 3.052rem; } /* ~55px */
-h3 { font-size: 2.441rem; } /* ~44px */
-h4 { font-size: 1.953rem; } /* ~35px */
-h5 { font-size: 1.563rem; } /* ~28px */
-h6 { font-size: 1.25rem; }   /* ~22.5px */
+/* All headings use the new primary brand color */
+h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem; }
+h1 { font-size: 3.815rem; }
+h2 { font-size: 3.052rem; }
+h3 { font-size: 2.441rem; }
+h4 { font-size: 1.953rem; }
+h5 { font-size: 1.563rem; }
+h6 { font-size: 1.25rem; }
 p, li, a { font-size: 1rem; }
 
-/* --- COLOR VARIABLES (Yellow Primary, Dark Green Accent, Blue Removed) --- */
+/* --- COLOR VARIABLES --- */
 :root {
-    --primary-yellow: #ffc107; /* Primary Color: Yellow */
-    --accent-green: #145c38; /* Accent Color: Darker Green */
+    --primary-blue: #206A85;
+    --accent-yellow: #ffc107;
 }
 
 /* --- Navigation & Global Elements --- */
 
-/* Navbar - Now Yellow (Primary) */
-.navbar { background-color: var(--primary-yellow) !important; }
-.navbar .navbar-brand { color: #000 !important; font-weight: 700; }
-.navbar .nav-link { color: #333 !important; }
-.navbar .nav-link.active { color: #000 !important; font-weight: 700; border-bottom: 2px solid var(--accent-green); }
-.navbar-toggler { border-color: #000; }
-.navbar-toggler-icon { filter: invert(1); } /* Make hamburger icon black */
+/* Navbar - Overrides Bootstrap defaults to use the custom Primary Blue */
+.navbar { background-color: var(--primary-blue) !important; }
+.navbar .navbar-brand { color: var(--accent-yellow) !important; font-weight: 700; }
+.navbar .nav-link { color: #fff !important; }
+.navbar .nav-link:hover { color: var(--accent-yellow) !important; }
 
-/* Footer Specifics - Uses Dark Green Accent */
-footer { background-color: var(--accent-green) !important; color: white; }
-.social-icon-link { color: var(--primary-yellow); }
+.navbar .nav-link.active { color: var(--accent-yellow) !important; font-weight: 700; border-bottom: 2px solid var(--accent-yellow); }
+
+.navbar-toggler { border-color: #fff; }
+
+.navbar-toggler-icon { 
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* Footer Specifics */
+footer { background-color: #333333 !important; color: white; } 
+.social-icon-link { color: var(--accent-yellow); }
 .social-icon-link:hover { color: #fff; }
 
-/* --- Bootstrap Color Overrides (Blue Removed) --- */
+/* --- Bootstrap Color Overrides --- */
 
-/* Override Bootstrap Success -> Dark Green Accent */
-.bg-success { background-color: var(--accent-green) !important; }
-.text-success { color: var(--accent-green) !important; }
-.btn-success { background-color: var(--accent-green); border-color: var(--accent-green); }
-.btn-success:hover { background-color: #0d3b24; border-color: #0d3b24; }
+.bg-success { background-color: var(--primary-blue) !important; }
+.text-success { color: var(--primary-blue) !important; }
+.btn-success { background-color: var(--accent-yellow); border-color: var(--accent-yellow); }
+.btn-success:hover { background-color: #1B5A71; border-color: #1B5A71; }
 
-/* Override Bootstrap Primary (Blue) -> Yellow/Black */
-.bg-primary { background-color: var(--primary-yellow) !important; color: #000; }
-.text-primary { color: #d39e00 !important; } /* Darker yellow text for contrast */
-.btn-primary { background-color: var(--primary-yellow); border-color: var(--primary-yellow); color: #000; font-weight: bold; }
+.bg-primary { background-color: var(--accent-yellow) !important; color: #000; }
+.text-primary { color: #fff !important; }
+.btn-primary { background-color: var(--accent-yellow); border-color: var(--accent-yellow); color: #000; font-weight: bold; }
 .btn-primary:hover { background-color: #e0a800; border-color: #e0a800; color: #000; }
 .badge.bg-primary { color: #000; }
 
 
-/* --- GLOBAL LAYOUT STYLES (Used by multiple internal pages) --- */
+/* --- GLOBAL LAYOUT STYLES --- */
 
-/* Standard header for internal pages */
+/* Standard Header for Internal Pages: ensures content is not hidden by sticky navbar */
 .page-header {
-    background-color: var(--primary-yellow); 
+    background-color: var(--accent-yellow); 
     color: #212529;
-    min-height: 50vh; display: flex; align-items: center; padding: 5rem 0;
+    min-height: 50vh; 
+    display: flex; 
+    align-items: center; 
+    padding-top: 9.5rem;
+    padding-bottom: 5rem; 
 }
+
+/* Generic Flex container for vertical centering */
 .content-block { 
     min-height: 700px; 
     display: flex; 
@@ -78,11 +88,12 @@ footer { background-color: var(--accent-green) !important; color: white; }
 .section-divider { 
     border: 0; 
     height: 3px; 
-    background-color: var(--accent-green); 
+    background-color: var(--primary-blue); 
     opacity: 1; 
     margin: 5rem 0; 
 }
 
+/* Hero Section */
 .hero-section {
     background-color: #4a4a4a;
     background-image: url('img/hero_animals.jpg'); 
@@ -90,14 +101,17 @@ footer { background-color: var(--accent-green) !important; color: white; }
     background-position: center;
     position: relative;
     height: 100vh;
+    padding-top: 4.5rem;
 }
+
+/* Hero Overlay */
 .hero-section::before {
     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.6); z-index: 1;
 }
 .hero-section .container { position: relative; z-index: 2; }
 
-/* Carousel Styles */
+/* Carousel Customization */
 .carousel-inner-overlay { 
     height: 350px; 
     border-radius: 8px; 
@@ -109,6 +123,8 @@ footer { background-color: var(--accent-green) !important; color: white; }
     background-position: center; 
     position: relative; 
 }
+
+/* Custom gradient caption */
 .carousel-caption-custom {
     position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 1.5rem 3.5rem 1.5rem; 
     background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1)); 
@@ -130,7 +146,7 @@ footer { background-color: var(--accent-green) !important; color: white; }
 .lesson-img { 
     width: 100%; 
     height: 300px; 
-    object-fit: cover; 
+    object-fit: cover;
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
@@ -143,6 +159,7 @@ footer { background-color: var(--accent-green) !important; color: white; }
 
 /* --- DONATION.HTML SPECIFIC STYLES --- */
 
+/* Card Hover Effect */
 .rescue-card { 
     transition: transform 0.3s, box-shadow 0.3s; 
 }
@@ -151,6 +168,7 @@ footer { background-color: var(--accent-green) !important; color: white; }
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
 }
 
+/* Large Emoji styling for feature cards */
 .emoji-icon { 
     font-size: 8rem; 
     display: block; 
@@ -160,17 +178,18 @@ footer { background-color: var(--accent-green) !important; color: white; }
     border-radius: 8px; 
 }
 
+/* Specific background colors for the emoji containers */
 .feature-red .emoji-icon { 
     background-color: #ffcccc; 
 }
 .feature-yellow .emoji-icon { 
     background-color: #ffffe0; 
 }
-
 .feature-earth .emoji-icon { 
     background-color: #dcedc8; 
-} /* Light Greenish */
+}
 
+/* Text color utilities for the donation features */
 .text-red { 
     color: #FF0000 !important; 
 }
@@ -178,5 +197,51 @@ footer { background-color: var(--accent-green) !important; color: white; }
     color: #CCCC00 !important; 
 } 
 .text-earth { 
-    color: var(--accent-green) !important; 
-} /* Dark Green text for 3rd feature */
+    color: var(--primary-blue) !important; 
+}
+
+/* ------------------------------------------------------ */
+/* --- HERO SECTION VIDEO BACKGROUND (UPDATED) --------- */
+/* ------------------------------------------------------ */
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    
+    /* These two lines force the video to cover the screen (like background-size: cover) */
+    /* 177.77vh is derived from the 16:9 aspect ratio (16/9 * 100) */
+    min-width: 177.77vh; 
+    min-height: 56.25vw; 
+    
+    pointer-events: none; /* Prevents user from clicking/pausing video */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Darken the video slightly so text is readable */
+    background: rgba(0,0,0,0.5); 
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
