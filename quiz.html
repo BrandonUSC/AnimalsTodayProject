@@ -13,16 +13,17 @@
 
     <!-- Google font and project styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/styles.css?v=1.0.3"> 
 </head>
 <body>
 
-   <!-- NAVBAR links to other sites-->
+   <!-- NAVBAR links to other pages in the website-->
    <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
         <div class="container">
             <!-- Brand: logo + site name -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/Logo.png" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;">
+                <!-- lazy-load the logo so it doesn't block initial paint -->
+                <img src="img/Logo.png?v=1.0.3" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;" loading="lazy" decoding="async">
                 <span class="fw-bold fs-3 text-primary">AnimalsToday</span>
             </a>
 
@@ -173,8 +174,7 @@
                 </form>
 
                 <!-- Result area (populated by JS)
-                     - Hidden by default (d-none). Use role="alert" for assistive tech announcements.
-                     - quiz.js should remove d-none and fill innerHTML to show results.
+                     - Hidden by default (d-none).
                 -->
                 <div id="quizResult" class="mt-4 p-3 border rounded d-none" role="alert"></div>
 
@@ -183,7 +183,7 @@
     </main>
 
     <!-- SITE FOOTER -->
-     <footer class="pt-4 mt-5">
+    <footer class="pt-4 mt-5">
         <div class="container text-center py-4">
             <div class="row">
                 <div class="col-md-4 mb-3">
@@ -191,9 +191,10 @@
                     <p class="small mb-2">Have a question? Contact the team today!</p>
                     <a href="contact.html" class="btn btn-success btn-lg mb-3">Contact Us</a>
                     <div class="my-3">
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
+                        <!-- Social icons with real links -->
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link mx-2"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-link mx-2"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                     </div>
                     <p class="mb-0 small">Email: info@animalstoday.org</p>
                 </div>
@@ -219,9 +220,10 @@
         </div>
     </footer>
 
+
     <!-- JS: Bootstrap + site scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/quiz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/main.js?v=1.0.3" defer></script>
+    <script src="js/quiz.js?v=1.0.3" defer></script>
 </body>
 </html>

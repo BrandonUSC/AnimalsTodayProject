@@ -3,7 +3,7 @@
 html { font-size: 18px; }
 body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #212529; }
 
-/* All headings use the new primary brand color */
+ /* All headings use the new primary brand color */
 h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--primary-blue); margin-bottom: 1rem; }
 h1 { font-size: 3.815rem; }
 h2 { font-size: 3.052rem; }
@@ -21,35 +21,54 @@ p, li, a { font-size: 1rem; }
 
 /* --- Navigation & Global Elements --- */
 
-/* Navbar - Overrides Bootstrap defaults to use the custom Primary Blue */
+/* Navbar background color override to use the brand color */
 .navbar { background-color: var(--primary-blue) !important; }
+
+/* Brand / logo styles inside navbar */
 .navbar .navbar-brand { color: var(--accent-yellow) !important; font-weight: 700; }
+
+/* Primary navigation link color */
 .navbar .nav-link { color: #fff !important; }
+
+/* Hover state for nav links */
 .navbar .nav-link:hover { color: var(--accent-yellow) !important; }
 
+/* Active nav link styling (highlight & underline) */
 .navbar .nav-link.active { color: var(--accent-yellow) !important; font-weight: 700; border-bottom: 2px solid var(--accent-yellow); }
 
+/* Toggler (mobile) border color */
 .navbar-toggler { border-color: #fff; }
 
+/* Custom hamburger icon SVG for the toggler */
 .navbar-toggler-icon { 
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 
-/* Footer Specifics */
+ /* Footer Specifics */
+ /* Footer background and text color */
 footer { background-color: #333333 !important; color: white; } 
+
+/* Social icon link color in footer */
 .social-icon-link { color: var(--accent-yellow); }
+
+/* Hover state for social icons */
 .social-icon-link:hover { color: #fff; }
 
 /* --- Bootstrap Color Overrides --- */
-
+/* Override Bootstrap success class to use primary brand blue */
 .bg-success { background-color: var(--primary-blue) !important; }
 .text-success { color: var(--primary-blue) !important; }
+
+/* Buttons: use accent yellow for success variant */
 .btn-success { background-color: var(--accent-yellow); border-color: var(--accent-yellow); }
 .btn-success:hover { background-color: #1B5A71; border-color: #1B5A71; }
 
+/* Primary background/banner override to use accent yellow */
 .bg-primary { background-color: var(--accent-yellow) !important; color: #000; }
 .text-primary { color: #fff !important; }
+
+/* Primary button styling */
 .btn-primary { background-color: var(--accent-yellow); border-color: var(--accent-yellow); color: #000; font-weight: bold; }
 .btn-primary:hover { background-color: #e0a800; border-color: #e0a800; color: #000; }
 .badge.bg-primary { color: #000; }
@@ -77,14 +96,17 @@ footer { background-color: #333333 !important; color: white; }
 }
 
 
-/* --- INDEX.HTML SPECIFIC STYLES --- */
+ /* --- INDEX.HTML SPECIFIC STYLES --- */
 
+/* Reusable full-height section used on the homepage */
 .uniform-section { 
     min-height: 450px; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
 }
+
+/* Decorative section divider used between sections */
 .section-divider { 
     border: 0; 
     height: 3px; 
@@ -94,6 +116,7 @@ footer { background-color: #333333 !important; color: white; }
 }
 
 /* Hero Section */
+/* Main hero area with background image/video */
 .hero-section {
     background-color: #4a4a4a;
     background-image: url('img/hero_animals.jpg'); 
@@ -105,6 +128,7 @@ footer { background-color: #333333 !important; color: white; }
 }
 
 /* Hero Overlay */
+/* Dark translucent overlay on top of hero background to improve text contrast */
 .hero-section::before {
     content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.6); z-index: 1;
@@ -112,11 +136,14 @@ footer { background-color: #333333 !important; color: white; }
 .hero-section .container { position: relative; z-index: 2; }
 
 /* Carousel Customization */
+/* Inner card appearance for any homepage carousel */
 .carousel-inner-overlay { 
     height: 350px; 
     border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
 }
+
+/* Individual carousel slide styling */
 .carousel-item-overlay { 
     height: 100%; 
     background-size: cover; 
@@ -125,6 +152,7 @@ footer { background-color: #333333 !important; color: white; }
 }
 
 /* Custom gradient caption */
+/* Caption area with fade for readability */
 .carousel-caption-custom {
     position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 1.5rem 3.5rem 1.5rem; 
     background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1)); 
@@ -136,13 +164,27 @@ footer { background-color: #333333 !important; color: white; }
     margin-bottom: 0.25rem; 
 }
 
-/* --- LESSONS.HTML SPECIFIC STYLES --- */
+/* Center only the Read More button inside */
+.carousel-caption-custom .btn-center {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.75rem; /* space above button so it doesn't sit on the text */
+}
 
+/* keep the button its natural width */
+.carousel-caption-custom .btn-center .btn {
+    display: inline-block;
+}
+
+
+/* Row container for each lesson card */
 .lesson-row { 
     margin-bottom: 3rem; 
     padding: 2rem 0; 
     border-radius: 8px; 
 }
+
+/* Image behavior in lesson tiles */
 .lesson-img { 
     width: 100%; 
     height: 300px; 
@@ -150,6 +192,8 @@ footer { background-color: #333333 !important; color: white; }
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
+
+/* Text column inside lesson rows */
 .lesson-text-col { 
     padding: 2rem; 
     display: flex; 
@@ -160,6 +204,7 @@ footer { background-color: #333333 !important; color: white; }
 /* --- DONATION.HTML SPECIFIC STYLES --- */
 
 /* Card Hover Effect */
+/* Lift and shadow effect for rescue cards to make them interactive */
 .rescue-card { 
     transition: transform 0.3s, box-shadow 0.3s; 
 }
@@ -169,6 +214,7 @@ footer { background-color: #333333 !important; color: white; }
 }
 
 /* Large Emoji styling for feature cards */
+/* Used for big icon-like emoji visuals */
 .emoji-icon { 
     font-size: 8rem; 
     display: block; 
@@ -200,10 +246,7 @@ footer { background-color: #333333 !important; color: white; }
     color: var(--primary-blue) !important; 
 }
 
-/* ------------------------------------------------------ */
-/* --- HERO SECTION VIDEO BACKGROUND (UPDATED) --------- */
-/* ------------------------------------------------------ */
-
+/* Video background container for hero or other full-bleed sections */
 .video-background {
     position: absolute;
     top: 0;
@@ -214,6 +257,7 @@ footer { background-color: #333333 !important; color: white; }
     z-index: 0;
 }
 
+/* Make embedded iframe cover the container similar to background-size: cover */
 .video-background iframe {
     position: absolute;
     top: 50%;
@@ -222,14 +266,14 @@ footer { background-color: #333333 !important; color: white; }
     height: 100vh;
     transform: translate(-50%, -50%);
     
-    /* These two lines force the video to cover the screen (like background-size: cover) */
-    /* 177.77vh is derived from the 16:9 aspect ratio (16/9 * 100) */
+    /* These two lines force the video to cover the screen */
     min-width: 177.77vh; 
     min-height: 56.25vw; 
     
     pointer-events: none; /* Prevents user from clicking/pausing video */
 }
 
+/* Slight dark overlay for videos to keep text readable */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -241,6 +285,7 @@ footer { background-color: #333333 !important; color: white; }
     z-index: 1;
 }
 
+/* Ensure hero container sits above video/background layers */
 .hero-section .container {
     position: relative;
     z-index: 2;

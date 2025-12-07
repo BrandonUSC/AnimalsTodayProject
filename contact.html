@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-      contact.html
-            Form posts to Formspree (action attribute). Replace endpoint if you move to a different provider.
-            The top alert (#formSuccessAlert) is toggled by client-side JS after successful submit.
-    -->
+    <!-- contact.html — AnimalsToday -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Get In Touch</title>
+
+    <!-- Bootstrap + Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/styles.css"> 
+
+    <!-- Your Styles (with versioning) -->
+    <link rel="stylesheet" href="css/styles.css?v=1"> 
 </head>
 <body>
 
@@ -22,12 +22,13 @@
     <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/Logo.png" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;">
+                <img src="img/Logo.png?v=1" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;" loading="lazy">
                 <span class="fw-bold fs-3 text-primary">AnimalsToday</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link fs-5" href="index.html">Home</a></li>
@@ -35,14 +36,13 @@
                     <li class="nav-item"><a class="nav-link fs-5" href="donation.html">Donation</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="quiz.html">Quiz</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="glossary.html">Glossary</a></li>
-                    <!-- Contact active -->
                     <li class="nav-item"><a class="nav-link fs-5 active" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header for contact page -->
+    <!-- Page Header -->
     <header class="page-header header-contact">
         <div class="container text-start">
             <h1 class="display-4 fw-bold text-primary">Contact Us</h1>
@@ -50,31 +50,43 @@
         </div>
     </header>
 
+    <!-- Contact Form -->
     <main class="container py-5 content-block">
         <div class="row justify-content-center">
-            
+
             <div class="col-12" id="contactContainer">
                 <h2 class="mb-4 text-center">Send Us a Message</h2>
 
-                <!--
-                  Contact form:
-                    - method="POST" action="https://formspree.io/f/xpwvlojv"
-                    done by formspree
-                -->
-                <form method="POST" action="https://formspree.io/f/xpwvlojv" id="contactForm" class="mx-auto" style="max-width: 800px;">
+                <form method="POST" 
+                      action="https://formspree.io/f/xpwvlojv" 
+                      id="contactForm"
+                      class="mx-auto" 
+                      style="max-width: 800px;">
+
                     <div class="mb-3">
                         <label for="name" class="form-label">Full Name</label>
-                        <!-- required for accessibility and backend -->
                         <input type="text" class="form-control" id="name" name="name" required>
                     </div>
+
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
+
+                    <!-- NEW: Address field (required for validation) -->
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Telephone Number (Optional)</label>
-                        <input type="tel" class="form-control" id="phone" name="phone">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" required>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telephone Number</label>
+                        <!-- made required and added simple validation pattern -->
+                        <input type="tel" class="form-control" id="phone" name="phone" required
+                               pattern="\+?[0-9\s\-\(\)]{7,20}"
+                               title="Enter a valid phone number (digits, spaces, +, hyphens, parentheses allowed).">
+                    </div>
+
                     <div class="mb-3">
                         <label for="subject" class="form-label">Subject</label>
                         <select class="form-select" id="subject" name="_subject" required>
@@ -85,34 +97,45 @@
                             <option>Report a Bug</option>
                         </select>
                     </div>
+
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control" id="message" rows="5" name="message" required></textarea>
                     </div>
+
                     <div class="text-center">
                         <button type="submit" class="btn btn-success btn-lg mt-3">Submit Message</button>
                     </div>
                 </form>
             </div>
-            
+
+            <!-- NEW: success message element that main.js expects (hidden by default) -->
+            <div id="successMessage" class="d-none mx-auto" style="max-width:800px; margin-top:1rem;">
+                <div class="alert alert-success text-center" role="status">
+                    Thank you — your message has been sent. We'll get back to you shortly.
+                </div>
             </div>
+
+        </div>
     </main>
 
     <!-- Footer -->
-     <footer class="pt-4 mt-5">
+    <footer class="pt-4 mt-5">
         <div class="container text-center py-4">
             <div class="row">
+                
                 <div class="col-md-4 mb-3">
                     <h5>Get In Touch & Connect</h5>
                     <p class="small mb-2">Have a question? Contact the team today!</p>
                     <a href="contact.html" class="btn btn-success btn-lg mb-3">Contact Us</a>
                     <div class="my-3">
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
                     </div>
                     <p class="mb-0 small">Email: info@animalstoday.org</p>
                 </div>
+
                 <div class="col-md-4 mb-3">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled small">
@@ -123,21 +146,23 @@
                         <li><a href="glossary.html" class="text-white text-decoration-none">Glossary</a></li>
                     </ul>
                 </div>
+
                 <div class="col-md-4 mb-3">
                     <h5>Legal & Project Info</h5>
                     <p class="small mb-1">Bootstrap Project</p>
                     <p class="small mb-1">Privacy Policy</p>
                     <p class="small mb-1">Terms of Use</p>
                 </div>
+
             </div>
+
             <hr class="mt-4 mb-2">
             <p class="small mb-0">&copy; 2025 AnimalsToday | Project</p>
         </div>
     </footer>
 
-    <!-- Scripts: main.js handles the forms
-    -->
+    <!-- Bootstrap + your JS (versioning added) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=1"></script>
 </body>
 </html>

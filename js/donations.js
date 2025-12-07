@@ -1,3 +1,4 @@
+// donations.js
 // Donation goal logic
 const goal = 1000;
 let currentDonated = 250;
@@ -44,5 +45,5 @@ donationForm.addEventListener('submit', function(e) {
     }
 });
 
-// Update progress to page
+// Initialize progress bar on page load
 updateProgress();

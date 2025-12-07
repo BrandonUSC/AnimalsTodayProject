@@ -1,4 +1,3 @@
-
 //quiz.js Handles quiz logic
 
 document.getElementById('dailyQuizForm').addEventListener('submit', function(e) {

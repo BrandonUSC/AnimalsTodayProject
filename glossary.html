@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
     <!--
       glossary.html
-      A - Z glossary of animal terms for AnimalsToday.-->
+      A - Z glossary of animal terms for AnimalsToday.
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossary - AnimalsToday</title>
+
+    <!-- External CDN files – no versioning needed -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css"> 
+
+    <!-- Local CSS with versioning -->
+    <link rel="stylesheet" href="css/styles.css?v=1">
 </head>
 <body>
 
@@ -18,7 +23,8 @@
     <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/Logo.png" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;">
+                <!-- Versioned logo -->
+                <img src="img/Logo.png?v=1" alt="AnimalsToday Logo" class="me-3" style="height: 60px; width: auto;" loading="lazy" decoding="async">
                 <span class="fw-bold fs-3 text-primary">AnimalsToday</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -30,7 +36,6 @@
                     <li class="nav-item"><a class="nav-link fs-5" href="lessons.html">Lessons</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="donation.html">Donation</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="quiz.html">Quiz</a></li>
-                    <!-- Glossary active -->
                     <li class="nav-item"><a class="nav-link fs-5 active" href="glossary.html">Glossary</a></li>
                     <li class="nav-item"><a class="nav-link fs-5" href="contact.html">Contact</a></li>
                 </ul>
@@ -38,11 +43,11 @@
         </div>
     </nav>
 
-    <!-- Header for glossary -->
+    <!-- Header -->
     <header class="page-header">
         <div class="container">
             <h1 class="display-4 fw-bold text-primary">Glossary Terms</h1>
-            <p class="lead text-primary">Nullam urna eros, rutrum quis vulputate quis, interdum id est.</p>
+            <p class="lead text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
     </header>
 
@@ -51,76 +56,79 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 class="mb-4">A - Z Animal Terms</h2>
-                
-                <!-- Glossary Items -->
+
                 <ul class="list-group list-group-flush mb-5">
+
                     <li class="list-group-item">
                         <h4 class="fw-bold">Amphibians</h4>
-                        <p>A class of cold-blooded vertebrates, including frogs, toads, and salamanders, that are typically aquatic as larvae and terrestrial as adults, characterized by a smooth, moist skin.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod velit non ligula facilisis.</p>
                     </li>
+
                     <li class="list-group-item">
-                        <h4 class="fw-bold">Aves (Birds)</h4>
-                        <p>A class of warm-blooded, egg-laying vertebrates distinguished by the possession of feathers, wings, and a beak.</p>
+                        <h4 class="fw-bold">Birds</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum libero et urna malesuada.</p>
                     </li>
+
                     <li class="list-group-item">
-                        <h4 class="fw-bold">Baleen</h4>
-                        <p>A filter-feeding system inside the mouths of baleen whales. It is a brush-like structure made of keratin that filters plankton and krill from the water.</p>
+                        <h4 class="fw-bold">Cold-blooded</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim velit nec nisl semper.</p>
                     </li>
-                    <li class="list-group-item">
-                        <h4 class="fw-bold">Cold-blooded (Ectothermic)</h4>
-                        <p>Animals that cannot internally regulate their body temperature, relying instead on the external environment (like the sun) to warm up.</p>
-                    </li>
+
                     <li class="list-group-item">
                         <h4 class="fw-bold">Endangered Species</h4>
-                        <p>A species that is very likely to become extinct in the near future, either globally or within a specific political jurisdiction.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum tortor vitae nisi gravida.</p>
                     </li>
+
                     <li class="list-group-item">
-                        <h4 class="fw-bold">Gestation Period</h4>
-                        <p>The length of time from conception to birth in mammals; the period during which an embryo or fetus develops inside the mother.</p>
+                        <h4 class="fw-bold">Mammals</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere mi ut est finibus.</p>
                     </li>
-                    <li class="list-group-item">
-                        <h4 class="fw-bold">Mammals (Mammalia)</h4>
-                        <p>A class of vertebrates characterized by the presence of mammary glands, hair or fur, and a neocortex (a region of the brain).</p>
-                    </li>
+
                     <li class="list-group-item">
                         <h4 class="fw-bold">Metamorphosis</h4>
-                        <p>A biological process by which an animal physically develops after birth or hatching, involving a conspicuous and relatively abrupt change in the animal's body structure (e.g., tadpole to frog).</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Morbi hendrerit urna non sapien.</p>
                     </li>
+
                     <li class="list-group-item">
-                        <h4 class="fw-bold">Pisces (Fish)</h4>
-                        <p>A paraphyletic group of aquatic, gill-bearing, craniate animals that lack limbs with digits.</p>
+                        <h4 class="fw-bold">Pisces</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper ipsum a lectus pulvinar.</p>
                     </li>
+
                     <li class="list-group-item">
-                        <h4 class="fw-bold">Reptiles (Reptilia)</h4>
-                        <p>A class of cold-blooded vertebrates typically having a body covered with scales or bony plates and reproducing by laying eggs.</p>
+                        <h4 class="fw-bold">Reptiles</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat.</p>
                     </li>
+
                     <li class="list-group-item">
-                        <h4 class="fw-bold">Warm-blooded (Endothermic)</h4>
-                        <p>Animals that are capable of maintaining a relatively constant internal body temperature through metabolic activity, regardless of external environmental temperatures (examples include birds and mammals).</p>
+                        <h4 class="fw-bold">Warm-blooded</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ipsum vel eros.</p>
                     </li>
+
                 </ul>
 
             </div>
         </div>
     </main>
 
-
-    <!-- FOOTER: contact call to action, quick links, and more-->
+    <!-- Footer -->
     <footer class="pt-4 mt-5">
         <div class="container text-center py-4">
+
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <h5>Get In Touch & Connect</h5>
                     <p class="small mb-2">Have a question? Contact the team today!</p>
                     <a href="contact.html" class="btn btn-success btn-lg mb-3">Contact Us</a>
+
                     <div class="my-3">
-                        <!-- Social icons -->
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link mx-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-link mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link mx-2"><i class="fab fa-instagram"></i></a>
                     </div>
+
                     <p class="mb-0 small">Email: info@animalstoday.org</p>
                 </div>
+
                 <div class="col-md-4 mb-3">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled small">
@@ -131,6 +139,7 @@
                         <li><a href="glossary.html" class="text-white text-decoration-none">Glossary</a></li>
                     </ul>
                 </div>
+
                 <div class="col-md-4 mb-3">
                     <h5>Legal & Project Info</h5>
                     <p class="small mb-1">Bootstrap Project</p>
@@ -138,12 +147,15 @@
                     <p class="small mb-1">Terms of Use</p>
                 </div>
             </div>
+
             <hr class="mt-4 mb-2">
             <p class="small mb-0">&copy; 2025 AnimalsToday | Project</p>
+
         </div>
     </footer>
 
-    <!-- Bootstrap JS bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS bundle (no versioning needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </body>
 </html>
